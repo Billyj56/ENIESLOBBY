@@ -1,6 +1,8 @@
+/* Styles généraux pour le corps */
 body {
-    margin: 0; /* Supprimer les marges par défaut */
-    overflow: hidden; /* Empêcher le défilement de la page */
+    margin: 0;
+    height: 100vh;
+    overflow: hidden; /* Cacher les débordements */
 }
 
 /* Styles pour la vidéo en arrière-plan */
@@ -12,7 +14,7 @@ body {
     min-height: 100%; /* Prendre toute la hauteur de la fenêtre */
     width: auto; /* S'ajuster automatiquement */
     height: auto; /* S'ajuster automatiquement */
-    z-index: -1; /* Mettre la vidéo derrière le contenu */
+    z-index: -1; /* Placer la vidéo derrière le contenu */
     transform: translate(-50%, -50%); /* Centrer la vidéo */
 }
 
@@ -24,7 +26,8 @@ body {
     border-radius: 10px; /* Coins arrondis */
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5); /* Ombre autour du quiz */
     text-align: center; /* Centrer le texte */
-    z-index: 1; /* S'assurer que le quiz est au-dessus de la vidéo */
+    width: 90%; /* Limiter la largeur du conteneur */
+    max-width: 600px; /* Largeur maximale pour le conteneur */
 }
 
 /* Styles pour les boutons d'option */
