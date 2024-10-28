@@ -11,5 +11,4 @@ Un mini quiz interactif sur le thème de One Piece, développé avec HTML, CSS e
 
 ## Installation
 
-1. Clonez le dépôt sur votre machine locale :
-   ```bash git clone https://billyj56.github.io/ENIESLOBBY/
+1. Clonez le dépôt sur votre machine locale :```bash git clone https://billyj56.github.io/ENIESLOBBY/
