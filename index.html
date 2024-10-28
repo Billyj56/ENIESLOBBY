@@ -8,25 +8,26 @@
 </head>
 <body>
     <!-- Vidéo en arrière-plan -->
-    <div class="video-container">
-        <video autoplay loop muted class="background-video">
-            <source src="path/to/your/video.mp4" type="video/mp4"> <!-- Remplace par le bon chemin vers ta vidéo -->
-            Votre navigateur ne prend pas en charge la vidéo.
-        </video>
+    <video class="video-background" autoplay loop muted>
+        <source src="images/background.mp4" type="video/mp4">
+        Votre navigateur ne prend pas en charge la vidéo.
+    </video>
+
+    <!-- Conteneur du quiz -->
+    <div id="quiz">
+        <div class="question">Quelle est la question ?</div>
+        <button class="option">Option 1</button>
+        <button class="option">Option 2</button>
+        <button class="option">Option 3</button>
+        <button class="option">Option 4</button>
+        <div id="feedback"></div>
+        <button id="next-btn">Suivant</button>
+        <div id="score"></div>
     </div>
 
-    <div class="quiz-container" id="quiz">
-        <h2 id="question">Question s'affiche ici</h2>
-        <div class="options">
-            <button class="option" onclick="choisirReponse(0)">Option 1</button>
-            <button class="option" onclick="choisirReponse(1)">Option 2</button>
-            <button class="option" onclick="choisirReponse(2)">Option 3</button>
-            <button class="option" onclick="choisirReponse(3)">Option 4</button>
-        </div>
-        <button id="next-btn" onclick="questionSuivante()" style="display: none;">Question Suivante</button>
-        <p id="feedback"></p>
-        <p id="score">Score : 0</p>
-    </div>
+    <script src="app.js"></script>
+</body>
+</html>
 
     <!-- Firebase SDKs -->
     <script src="https://www.gstatic.com/firebasejs/9.1.0/firebase-app.js"></script>

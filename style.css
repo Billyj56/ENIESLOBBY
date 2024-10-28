@@ -1,14 +1,19 @@
 /* Styles généraux pour le corps */
 body {
-    background-image: url('images/Onepiece.jpg'); /* Chemin vers l'image de fond */
-    background-size: cover; /* Pour couvrir tout l'écran */
-    background-position: center; /* Centrer l'image */
-    background-repeat: no-repeat; /* Ne pas répéter l'image */
-    height: 100vh; /* Prendre toute la hauteur de la fenêtre */
     margin: 0; /* Supprimer les marges par défaut */
-    display: flex; /* Utiliser Flexbox pour centrer le contenu */
-    align-items: center; /* Centrer verticalement */
-    justify-content: center; /* Centrer horizontalement */
+    height: 100vh; /* Prendre toute la hauteur de la fenêtre */
+    overflow: hidden; /* Cacher les débordements */
+}
+
+/* Conteneur de la vidéo */
+.video-background {
+    position: absolute; /* Positionner la vidéo en arrière-plan */
+    top: 0;
+    left: 0;
+    width: 100%; /* Prendre toute la largeur */
+    height: 100%; /* Prendre toute la hauteur */
+    object-fit: cover; /* Couvrir l'écran sans déformer la vidéo */
+    z-index: -1; /* Placer la vidéo derrière le contenu */
 }
 
 /* Styles pour le conteneur du quiz */
@@ -19,12 +24,20 @@ body {
     border-radius: 10px; /* Coins arrondis */
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5); /* Ombre autour du quiz */
     text-align: center; /* Centrer le texte */
+    width: 90%; /* Limiter la largeur du conteneur */
+    max-width: 600px; /* Largeur maximale pour le conteneur */
+}
+
+/* Styles pour les questions */
+.question {
+    font-size: 1.5rem; /* Taille de la police des questions */
+    margin: 20px 0; /* Marge au-dessus et au-dessous des questions */
 }
 
 /* Styles pour les boutons d'option */
 .option {
     display: block;
-    margin: 10px auto;
+    margin: 10px auto; /* Centre les boutons */
     padding: 10px 20px;
     font-size: 18px;
     background-color: #28a745; /* Couleur verte par défaut */
@@ -73,18 +86,18 @@ body {
     color: #333; /* Couleur du texte du score */
 }
 
-.option {
-    display: block;
-    margin: 10px auto;
-    padding: 10px 20px;
-    font-size: 18px;
-    background-color: #28a745; /* Couleur verte par défaut */
-    color: white;
-    border: none;
-    border-radius: 5px;
-    transition: background-color 0.3s; /* Ajout d'une transition */
+/* Responsive Styles */
+@media (max-width: 600px) {
+    body {
+        font-size: 0.9rem; /* Réduit la taille de police pour les petits écrans */
+    }
+    .question {
+        font-size: 1.2rem; /* Agrandit le texte des questions pour la lisibilité */
+    }
 }
 
-.option:hover {
-    opacity: 0.8; /* Légère transparence au survol */
+@media (min-width: 601px) and (max-width: 900px) {
+    body {
+        font-size: 1.1rem; /* Taille de police intermédiaire */
+    }
 }
