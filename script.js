@@ -59,7 +59,7 @@ let reponseChoisie = false;
 // Fonction pour afficher la question actuelle
 function afficherQuestion() {
     const currentQuestion = questions[questionIndex];
-    document.getElementById("question").innerText = currentQuestion.question;
+    document.querySelector(".question").innerText = currentQuestion.question; // Utilisation de .question
     const options = document.querySelectorAll(".option");
     options.forEach((option, index) => {
         option.innerText = currentQuestion.options[index];
@@ -108,3 +108,12 @@ function finDuJeu() {
 
 // Charger la première question au début
 afficherQuestion();
+
+// Ajouter un écouteur pour chaque bouton d'option
+const optionsButtons = document.querySelectorAll(".option");
+optionsButtons.forEach((button, index) => {
+    button.addEventListener("click", () => choisirReponse(index));
+});
+
+// Ajouter un écouteur pour le bouton "Suivant"
+document.getElementById("next-btn").addEventListener("click", questionSuivante);

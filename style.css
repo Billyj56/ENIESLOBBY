@@ -1,19 +1,19 @@
-/* Styles généraux pour le corps */
 body {
     margin: 0; /* Supprimer les marges par défaut */
-    height: 100vh; /* Prendre toute la hauteur de la fenêtre */
-    overflow: hidden; /* Cacher les débordements */
+    overflow: hidden; /* Empêcher le défilement de la page */
 }
 
-/* Conteneur de la vidéo */
+/* Styles pour la vidéo en arrière-plan */
 .video-background {
-    position: absolute; /* Positionner la vidéo en arrière-plan */
-    top: 0;
-    left: 0;
-    width: 100%; /* Prendre toute la largeur */
-    height: 100%; /* Prendre toute la hauteur */
-    object-fit: cover; /* Couvrir l'écran sans déformer la vidéo */
-    z-index: -1; /* Placer la vidéo derrière le contenu */
+    position: fixed; /* Fixer la vidéo pour qu'elle soit en arrière-plan */
+    top: 50%; /* Centrer verticalement */
+    left: 50%; /* Centrer horizontalement */
+    min-width: 100%; /* Prendre toute la largeur de la fenêtre */
+    min-height: 100%; /* Prendre toute la hauteur de la fenêtre */
+    width: auto; /* S'ajuster automatiquement */
+    height: auto; /* S'ajuster automatiquement */
+    z-index: -1; /* Mettre la vidéo derrière le contenu */
+    transform: translate(-50%, -50%); /* Centrer la vidéo */
 }
 
 /* Styles pour le conteneur du quiz */
@@ -24,20 +24,13 @@ body {
     border-radius: 10px; /* Coins arrondis */
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5); /* Ombre autour du quiz */
     text-align: center; /* Centrer le texte */
-    width: 90%; /* Limiter la largeur du conteneur */
-    max-width: 600px; /* Largeur maximale pour le conteneur */
-}
-
-/* Styles pour les questions */
-.question {
-    font-size: 1.5rem; /* Taille de la police des questions */
-    margin: 20px 0; /* Marge au-dessus et au-dessous des questions */
+    z-index: 1; /* S'assurer que le quiz est au-dessus de la vidéo */
 }
 
 /* Styles pour les boutons d'option */
 .option {
     display: block;
-    margin: 10px auto; /* Centre les boutons */
+    margin: 10px auto;
     padding: 10px 20px;
     font-size: 18px;
     background-color: #28a745; /* Couleur verte par défaut */
@@ -84,20 +77,4 @@ body {
     font-size: 20px; /* Taille de la police pour le score */
     font-weight: bold; /* Mettre le texte en gras */
     color: #333; /* Couleur du texte du score */
-}
-
-/* Responsive Styles */
-@media (max-width: 600px) {
-    body {
-        font-size: 0.9rem; /* Réduit la taille de police pour les petits écrans */
-    }
-    .question {
-        font-size: 1.2rem; /* Agrandit le texte des questions pour la lisibilité */
-    }
-}
-
-@media (min-width: 601px) and (max-width: 900px) {
-    body {
-        font-size: 1.1rem; /* Taille de police intermédiaire */
-    }
 }
